@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.addon.kamazhi.objectmodel.Book;
 import com.addon.kamazhi.objectmodel.BookType;
+import com.addon.kamazhi.objectmodel.Voucher;
 import com.addon.kamazhi.objectmodel.VoucherType;
 
 /**
@@ -22,6 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(BookType.CREATE_TABLE_QUERY);
         db.execSQL(Book.CREATE_TABLE_QUERY);
         db.execSQL(VoucherType.CREATE_TABLE_QUERY);
+        db.execSQL(Voucher.CREATE_TABLE_QUERY);
     }
 
     @Override

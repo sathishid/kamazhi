@@ -7,7 +7,4 @@ package com.addon.kamazhi.db;
 public final class DBConstants {
     public static final int DBVersion=1;
     public static final String DBName="kamazhi.database.db";
-
-
-
 }

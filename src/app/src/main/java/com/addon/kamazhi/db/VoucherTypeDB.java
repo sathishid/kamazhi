@@ -30,10 +30,11 @@ public class VoucherTypeDB
         dbHelper.close();
     }
 
-    public static ArrayList<VoucherType> listBookTypes()
+    public static ArrayList<VoucherType> listVoucherTypes()
     {
         DBHelper dbHelper=new DBHelper(KamazhiApp.getContext());
         SQLiteDatabase database=dbHelper.getReadableDatabase();
+
         Cursor cursor= database.query(VoucherType.TABLE_NAME,new String[]
                 {
                         VoucherType.COLUMN_NAME_ID,
