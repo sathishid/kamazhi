@@ -10,6 +10,11 @@ public class BookType {
     public static final String COLUMN_NAME_ID="ID";
     public  static final String COLUMN_NAME_NAME="Name";
     public static final String COLUMN_NAME_DESC="Description";
+    public static final String CREATE_TABLE_QUERY =
+            "CREATE TABLE " + TABLE_NAME + " (" +
+                    COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
+                    COLUMN_NAME_NAME+ " TEXT," +
+                    COLUMN_NAME_DESC + " TEXT)";
 
     private int id;
     private String name;
