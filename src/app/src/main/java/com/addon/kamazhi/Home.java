@@ -11,7 +11,9 @@ import android.util.Log;
 
 import com.addon.kamazhi.db.BookTypeDB;
 import com.addon.kamazhi.db.DBHelper;
+import com.addon.kamazhi.db.VoucherTypeDB;
 import com.addon.kamazhi.objectmodel.BookType;
+import com.addon.kamazhi.objectmodel.VoucherType;
 
 import java.util.ArrayList;
 
@@ -24,11 +26,11 @@ public class Home extends AppCompatActivity {
     }
     public void addBookItem(View view)
     {
-        BookType btype=new BookType(3,"OTher","Other Desc");
-        BookTypeDB.addBookType(btype);
+        VoucherType btype=new VoucherType(3,"OTher","Other Desc");
+        VoucherTypeDB.addVoucherType(btype);
 
-        ArrayList<BookType> bookTypes=BookTypeDB.listBookTypes();
-        for(BookType bookType : bookTypes)
+        ArrayList<VoucherType> bookTypes=VoucherTypeDB.listBookTypes();
+        for(VoucherType bookType : bookTypes)
         {
             Log.i(bookType.getName(),bookType.getDescription());
         }

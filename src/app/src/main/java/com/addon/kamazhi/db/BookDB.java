@@ -27,7 +27,7 @@ public class BookDB {
         contentValues.put(Book.COLUMN_NAME_DESC,book.getDescription());
         contentValues.put(Book.COLUMN_NAME_Type,book.getBookType().getId());
         long lngData=database.insert(Book.TABLE_NAME,null,contentValues);
-        Log.i("Insert Operation",""+lngData);
+        Log.i("Book e","Inserted "+book.getName());
         dbHelper.close();
     }
 
