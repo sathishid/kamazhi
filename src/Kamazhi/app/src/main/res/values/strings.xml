@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Kamazhi</string>
+    <string name="string_account_balance">Account Balance</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="add_income">Add Income</string>
+    <string name="balance">Add Income</string>
+    <string name="category">Category</string>
+    <string name="Amount">Amount</string>
+    <string name="Data">Date</string>
+    <string name="Comments">Comments</string>
+    <string name="back">&lt;</string>
+</resources>
