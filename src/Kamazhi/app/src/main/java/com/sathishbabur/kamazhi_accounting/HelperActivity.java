@@ -1,6 +1,7 @@
 package com.sathishbabur.kamazhi_accounting;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.health.PackageHealthStats;
 import android.support.v7.app.ActionBar;
@@ -11,6 +12,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
@@ -68,7 +70,11 @@ public class HelperActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         editText=new EditText(this);
         editText.setInputType(inputType);
+
         layout.addView(editText, gl);
+        editText.requestFocus();
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.showSoftInput(editText, InputMethodManager.SHOW_FORCED);
     }
     protected Intent getResultIntent()
     {

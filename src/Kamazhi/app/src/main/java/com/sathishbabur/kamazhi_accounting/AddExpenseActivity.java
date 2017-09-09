@@ -45,10 +45,9 @@ public class AddExpenseActivity extends AppCompatActivity {
                 view.setText(intent.getStringExtra("result"));
                 break;
             case COMMENTS:
-                view=(TextView)findViewById(R.id.txtCategory);
+                view=(TextView)findViewById(R.id.txtComments);
                 view.setText(intent.getStringExtra("result"));
                 break;
-
         }
     }
 
@@ -59,7 +58,7 @@ public class AddExpenseActivity extends AppCompatActivity {
     }
 
     public void getDate(View view) {
-        Intent intent=new Intent(this,HelperActivity.class);
+        Intent intent=new Intent(this,DateHelperActivity.class);
         intent.putExtra("type",HelperActivity.DATE);
         startActivityForResult(intent, DATE);
     }

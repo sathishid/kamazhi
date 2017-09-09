@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".AddExpenseActivity" />
         <activity android:name=".InputHelperActivity" />
-        <activity android:name=".HelperActivity"></activity>
+        <activity android:name=".HelperActivity" />
+        <activity android:name=".DateHelperActivity"></activity>
     </application>
 
 </manifest>
