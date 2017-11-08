@@ -16,6 +16,7 @@ public class HomeActivity extends AppCompatActivity {
     HomeViewModel homeViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         homeViewModel=new HomeViewModel();
@@ -34,10 +35,10 @@ public class HomeActivity extends AppCompatActivity {
         switch (requestCode)
         {
             case Expense:
-                homeViewModel.sub(data.getDoubleExtra("dblValue",0));
+                homeViewModel.debit(data.getDoubleExtra("dblValue",0));
                 break;
             case Income:
-                homeViewModel.sum(data.getDoubleExtra("dblValue",0));
+                homeViewModel.credit(data.getDoubleExtra("dblValue",0));
                 break;
         }
 

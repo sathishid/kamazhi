@@ -12,11 +12,11 @@ public class HomeViewModel {
     public void setBalanceAmount(double balanceAmount) {
         this.balanceAmount = balanceAmount;
     }
-    public void sum(double value)
+    public void credit(double value)
     {
         balanceAmount+=value;
     }
-    public void sub(double value)
+    public void debit(double value)
     {
         balanceAmount-=value;
     }

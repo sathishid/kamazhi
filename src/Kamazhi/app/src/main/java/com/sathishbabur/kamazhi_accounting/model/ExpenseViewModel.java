@@ -10,6 +10,16 @@ public class ExpenseViewModel {
     double amount;
     long lgDate;
 
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    String desc;
+
     public int getCategoryId() {
         return categoryId;
     }

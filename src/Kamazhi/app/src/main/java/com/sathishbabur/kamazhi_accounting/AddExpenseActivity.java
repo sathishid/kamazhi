@@ -8,6 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.sathishbabur.kamazhi_accounting.db.BookTypeMasterDB;
+import com.sathishbabur.kamazhi_accounting.db.DBHelper;
+import com.sathishbabur.kamazhi_accounting.model.BookTypeMaster;
+
+import java.util.Map;
+
 public class AddExpenseActivity extends AppCompatActivity {
 
     public static final int CATEGORY = 1;
@@ -25,7 +31,7 @@ public class AddExpenseActivity extends AppCompatActivity {
     protected void updatePageType() {
         int requestCode = getIntent().getIntExtra("requestCode", 1);
         TextView txtTitle = (TextView) findViewById(R.id.txtTitle);
-        Button btnTransaction=(Button) findViewById(R.id.btnTransaction);
+        Button btnTransaction = (Button) findViewById(R.id.btnTransaction);
         switch (requestCode) {
             case HomeActivity.Expense:
                 txtTitle.setText(R.string.add_expense);
@@ -69,9 +75,15 @@ public class AddExpenseActivity extends AppCompatActivity {
     }
 
     public void getCategory(View view) {
+        DBHelper dbHelper=new DBHelper(this.getApplicationContext());
+        Map<Integer,BookTypeMaster> bookTypeMasterMap=BookTypeMasterDB.getAllIndexed(dbHelper);
+        System.out.println(bookTypeMasterMap);
+
         Intent intent = new Intent(this, HelperActivity.class);
         intent.putExtra("type", HelperActivity.TEXT);
+
         startActivityForResult(intent, CATEGORY);
+
     }
 
     public void getDate(View view) {
@@ -98,6 +110,10 @@ public class AddExpenseActivity extends AppCompatActivity {
         double dblValue = Double.parseDouble(txtView.getText().toString());
         intent.putExtra("dblValue", dblValue);
         return intent;
+    }
+
+    protected void updateDB() {
+        DBHelper dbHelper = new DBHelper(this.getApplicationContext());
     }
 
     public void sendResultBack(View view) {
